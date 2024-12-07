@@ -194,22 +194,14 @@
       </p>
       <div class="buttons-container">
         <button onclick="generateKazakhName(); animateNameWithEffects();">
+        <audio id="theme-song" src="popular.mp3" type="audio/mp3"></audio>
           Generate Name
         </button>
         <button class="copy-button" onclick="copyName()">Copy</button>
       </div>
 
       
-      <iframe
-        id="soundcloudPlayer"
-        width="100%"
-        height="166"
-        scrolling="no"
-        frameborder="no"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nicos-nextbots-ost/popular-nicos-nextbots&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-      >
-      </iframe>
+      
 
       <div id="name-container">
         <div id="name">Your Kazakh name will appear here!</div>
@@ -221,16 +213,20 @@
     </footer>
 
     <script>
+         const audio = document.getElementById('theme-song');
 
+        function toggleInfo() {
+            
+            if (audio.paused) {
+                audio.play();
+            } 
+        }
 
       function generateKazakhName() {
-          const soundcloudPlayer = document.getElementById("soundcloudPlayer");
+        
 
     
-          const src = soundcloudPlayer.src;
-          if (!src.includes("auto_play=true")) {
-              soundcloudPlayer.src = src + "&auto_play=true";
-          }
+          toggleInfo()
 
        
           const initialSyllables = ["Al", "Nur", "Bai", "Er", "Kan", "Zhan", "Ar", "Tem", "Ai", "Nur", "Altyn", "Gul", "Er", "Temir", "Sultan", "Kaz", "Bek", "As", "Shyn", "Tul", "Dar"];
