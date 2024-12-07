@@ -1,0 +1,2 @@
+# nameGen
+Kazakh name generator 
